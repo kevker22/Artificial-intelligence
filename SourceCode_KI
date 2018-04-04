@@ -42,12 +42,11 @@ namespace Eigene_KI
 
             Choices commands = new Choices();
 
-            #region Die String Arreys für die Fragen an Lis
+            #region Die String Arreys für die Fragen an die KI
             String[] begrüßung = new String[] { "hallo", "na was geht", "tach auch", "hallo lis" ,"lis" ,"okey lis" };
             String[] wiegehts = new String[] { "wie geht es dir", "wie gehts", "was läuft", "wie gehts dir" };
-            String[] wasgeht = new string[] { "was geht ab", "was los digga", "jo was geht" };
             String[] danke = new String[] { "danke", "dankeschön", "vielen dank" };
-            String[] kennst = new String[] { "kennst du den google assistent", "kennst du siri", "kennst du tatjana stahl", "kennst du jessica bastian", "kennst du maximilian meier", "kennst du luana felzmann" , "kennst du janik freiheit" };
+            String[] kennst = new String[] { "kennst du den google assistent", "kennst du siri", };
             String[] gut = new string[] { "danke mir gehts auch gut", "mir gehts auch gut", "super danke" };
             String[] werbist = new String[] { "wer bist du", "was bist du", "was genau bist du", "wie heißt du", "wie ist dein Name" };
             String[] erschaffen = new String[] { "wer hat dich programmiert", "wer hat dich erschaffen", "wer ist dein Erschaffer", "wer ist dein Schöpfer" };
@@ -55,23 +54,18 @@ namespace Eigene_KI
             String[] programme = new String[] { "welche programme kannst du öffnen", "was kannst du öffnen", "welche programme genau kannst du öffnen", "was kannst du in wikipedia suchen" };
             String[] uhrzeit = new String[] { "wie spät ist es", "wie viel uhr ist es", "was sagt die Zeit" };
             String[] datum = new String[] { "welcher tag ist heute", "was für ein Tag haben wir heute" };
-            String[] progöffnen = new String[] { "öffne Programme in C", "öffne programme in e","öffne serien","öffne filme", "öffne spiel" };
-            String[] maxcom = new string[] { "hallo, i bims", "bims du eins nise künstliche Intelligents", "schiesch" };
-            String[] maseldavis = new String[] { "hau mal jutubkake raus" };
+            String[] progöffnen = new String[] { "öffne Programme in C", "öffne programme in e","öffne spiel" };
             String[] wikipedia = new String[] { "was ist youtube", "was ist apple", "was ist google" };
             String[] witze = new string[] { "erzäh mir einen witz", "erzähl mir bitte einen witz", "kannst du mir einen witz erzählen", "sei mal witzig", "sei mal lustig", "hast du witze auf lager", "kennst du irgendwelche witze" };
             String[] ordner = new string[] {"wieviele ordner und dateien", "welche ordner und dateien"};
             String[] ruhemodus = new String[] { "spreche" , "sei still" };
-            String[] dubist = new String[] { "du bist schlau", "du bist dumm", "du bist cool" , "du bist scheiße" , "du bu bist witzig" , "du bist lustig" };
-
             String[] verabschieden = new String[3] { "tschüss", "danke das wars schon", "bis nächstes mal lis" };
 
             #endregion
 
             #region Kommandos werden hinzugefügt ( Fragen an Lis)
             commands.Add(begrüßung);
-            commands.Add(wiegehts);
-            commands.Add(wasgeht);
+            commands.Add(wiegehts); 
             commands.Add(danke);
             commands.Add(kennst);
             commands.Add(gut);
@@ -82,14 +76,10 @@ namespace Eigene_KI
             commands.Add(uhrzeit);
             commands.Add(datum);
             commands.Add(progöffnen);
-            commands.Add(maxcom);
-            commands.Add(maseldavis);
             commands.Add(wikipedia);
             commands.Add(witze);
             commands.Add(ordner);
             commands.Add(ruhemodus);
-            commands.Add(dubist);
-
             commands.Add(verabschieden);
 
             #endregion
@@ -110,7 +100,7 @@ namespace Eigene_KI
             #region Anfangssatz
             Random t = new Random();
             String[] anfang = new String[] { "wie kann ich helfen", "nenne mir dein anliegen", "was kann ich für sie tun", "schaltest du mich auch mal wieder ein, was gibts", "was los diga" };
-            say(anfang[t.Next(5)]); // Zum Ausprechen unserer KI, am Anfang
+            say(anfang[t.Next(5)]); // Zum Ausprechen der KI, am Anfang
             #endregion
 
 
@@ -125,21 +115,13 @@ namespace Eigene_KI
                 #region Antwortvielfalt, die Antworten von Lis auf die Commands
                 Random r = new Random();
 
-                String[] begrüßung = new String[] { "ich bin da", "am start, was gibts", "hallo, schön von dir zu hören", "ja hallo...", "tach auch", "da bist du ja wieder", "Moin", "was gehjt du opfa" };
+                String[] begrüßung = new String[] { "ich bin da", "am start, was gibts", "hallo, schön von dir zu hören", "ja hallo...", "tach auch", "da bist du ja wieder", "Moin", };
                 String[] wiegehts = new String[]  { "mir gehts gut und dir", "ich kann mich nicht beschweren", "ich bin eine Ki, gute Frage", "jetzt da du da bist wieder super","viel wichtiger, wie geht es dir"
                                                  , "schön das du fragst, es geht mir blendend" , "red nicht um den brei, was willst du"  };
-                String[] wasgeht = new String[] { "jo, was geht ab", "was los diga", "was geht was geht" };
                 String[] danke = new String[] { "aber gerne doch", "für dich doch immer" };
-                String[] google = new String[]    { "Ja na klar, aber der kann bald einpacken, wenn ich erstmal fertig programmiert bin", "dazu sage ich jetzt nichts" , "darüber möchte ich nicht reden "
+                String[] google = new String[]    { "Ja na klar, aber die bekommt bald Konkurenz, wenn ich erstmal fertig programmiert bin", "dazu sage ich jetzt nichts" , "darüber möchte ich nicht reden "
                                                  , "wäre möglich, heißt das ich bin dir nicht mehr gut genug"};
-                String[] siri = new String[] { "heikles thema, findest du nicht auch", "ja genau, da hab ich jetzt voll bock drüber zu reden", "wer kennt nicht apple", "ich glaube den scheiß bleibt keine Ki erspart, oder" };
-                String[] jessica = new String[]   { "klar, ist die große schwester meines entwicklerst , obwohl groß .. hehe", "26, sozialarbeiterin, wunderhübsch und an fasching tollpatschig, langt das",
-                                               "einfach nur bezaubernd, häschteg ironie , oder doch nicht " };
-                String[] tatjana = new String[] { "sie ist einfach nur süß", "denkt sie wäre zu, häschteg ,fett aber in wahrheit ist sie eine bildhübsche frau die perfekt ist so wie sie ist", "hey, ist die nich süß, doch oda" };
-                String[] max = new String[] { "börntznitz, das langt doch, oder", "bester mann, liebt youtube kacke und ist der bester infomatiker der welt", "wer kennt den boy nich, komm schon", "Herr Füller sein Lieblingsschüler .. hashtag Alle tot",  };
-                String[] luana = new String[]     {"beste freundin von dem boy, der mich erfunden hat", "klein, tollpatschig, war in neuseeland und liebt es zu zeichnen , ahh ja und ihr körper spackt immer",
-                                                  "lulu, , stimmt das war die kleine blonde, ja die ist goldig" };
-
+                String[] siri = new String[] { "heikles thema, findest du nicht auch", "ja genau, da hab ich jetzt voll bock drüber zu reden", "wer kennt nicht apple", };
                 String[] gut = new string[] { "das ist schön zu hören", "das freut mich aber für dich", "sehr gut, dann kannst du mir ja jetzt sagen, was du von mir willst" };
                 String[] werbist = new String[]       { "Darf ich mich vorstellen, ich bin eine neue künstliche intelligenz namens LIS" , "Mein Name ist Lis und ich bin eine KI" , "Ich heiße Lis und bin dein asistent", "eine ki, namens lis",
                                                      "Einfach gesagt ´bin ich ein neuer asistent"};
@@ -148,29 +130,17 @@ namespace Eigene_KI
 
                 String[] waskannst = new String[]       { "Ich bin noch recht neu, es kommen immer mehr funktionen dazu, momentan kann ich reden, Uhrzeit und Datum sagen und ein paar Programme öffnen, sowie bin ich ich schon begrenzt mit wikipedia verbunden",
                                                  "vieles, haha, nein spaß ich kann reden, uhrzeit und datum sagen und ein paar programme öffnen, sowie einige Fragen mit Hilfe von wikipedia beantworten", "frag mich das wenn ich aus der Alpha drausen bin nochmal",
-                                                 "Schwätzen, es dir abnehmen auf die Uhr oder den Kalender zu schauen und programme öffnen und bissel aus wikipedia vorlesen",
-                                                 "finde es doch einfach raus ", " frag nicht mich, ich mach eh schon genug für dich, sondern schau ins handbuch",
-                                                "ich bin die magische miesmuschel... lohl ", "zu wenig wenn du mich fragst, mein progammierer könnte sich ruhig mal mehr anstrengen" };
+                                                 "finde es doch einfach raus ", "zu wenig wenn du mich fragst, mein progammierer könnte sich ruhig mal mehr anstrengen" };
 
                 String[] programme = new String[] { "Das Spiel Ark und Im C Laufwerk die Programme", };
-                String[] uhrzeit = new String[] { DateTime.Now.ToString("HH:mm "), "Zeit um dich zu bessern, du nichtsnutz" }; // Zeitansage
-                String datum = DateTime.Now.ToString("d");                                                                     // Datumsansage
-                String[] maxcom = new string[] { "Schiesch, i bims, deine persöhnliche Speak Asistentin, und eins neise Inteligents... lohl " , "speak mich nich so schief von der seite an, amenakoi!"
-                                               , "was willst du lery fongg mia, i bims zu bisi für deine problähms"};
-                String[] maseldavis = new string[] { "ich war dabei,  i hei, iheiihei,       wardabadabhei ,hei , iheihihei,      wadabadadabeih...als wir kostenlos, sos, welan angeboten haben, manaben, ihei " ,
-                                                  "man muss aufpassen, ich könnte anfangen zu rohren" , "fünfhundertzweiunddreisig kalorien, die schneid ich auch noch ab" , "ich mag wixen, und majonese, und schokolade",
-                                                  "dabei hab ich ein, messer, feuerstein, ein wasserstein, und zeug..."};
+                String[] uhrzeit = new String[] { DateTime.Now.ToString("HH:mm ")}; // Zeitansage
+                String datum = DateTime.Now.ToString("d");                         // Datumsansage
                 String[] wikipedia = new string[] { "okey, lass mich schnell suchen", "hier die ergebnisse meiner suche", "Ich kann dir bis jetzt nur alles über youtube apple und google sagen" };
                 String[] witze = new String[] { "Wie nennt man einen übergewichtigen Vegetarier? - Biotonne" , "Los Pikatschu, Donnerblitz! Alter, hast du gerade meinen Hamster an die Steckdose geworfen?" , "Warum lässt eine Blondine die Milch fallen? – Weil sie nicht haltbar ist.",
                                              "Was hassen Fische? Antischuppenschampo" , "Was sagt ein Pirat, wenn er trockenes Gras sieht? - A Heu." , "Wie nennt man die Eier vom Pfarrer? Heiliger bimbam" ,
                                              "Wie schwer darf ein Furz sein? Null Gramm! Sonst ist es Scheiße!" , "Was haben Frauen und Handgranaten gemeinsam? Wenn du den Ring abziehst, ist dein Haus weg." , "Wie nennt man eine Demonstration von Veganern? Gemüseauflauf!!!" , "Ich wollte eine Musikschule neben einem Behindertenheim eröffnen doch der Slogen “Bongos für Monggos“ kam nicht so gut an.",
                                               "Warum dürfen Veganer kein Leitungswasser trinken? Weil es aus dem Hahn kommt." , "Warum wäscht eine Blondine ihr Shampoo? - weil draufsteht : Dusch das." };
-                String[] dubistschlau = new string[] { "danke, du auch" , "kann man von dir nicht behaupten" , "es geht, ich geb mir mühe immer schlauer zu werden"};
-                String[] dubistdumm = new string[] { "immernoch schlauer als wie du", "selber, dummkopf", "noch so ein spruch und ich deinstalliere mich selbst" };
-                String[] dubistscheiße = new string[] { "nein, denn ich bin ein programm und keine ausscheidung", "wenn du das sagst, du arsch!", "key, wenn du das denkst, dann such dir freunde und rede nicht mit mir" };
-                String[] dubistwitzig = new string[] { "danke, es kommen immer mehr witze dazu", "dankeschön", "Humor ist wichtig, egal ob für mensch oder maschine" };
-
-                String[] verabschieden = new String[4] { "Öffne mich bald wieder", "schön das ich dir helfen konnte", "bis nächstes mal, du opfer", "endlich kann ich chillen, tschau" };
+                String[] verabschieden = new String[] { "Öffne mich bald wieder", "schön das ich dir helfen konnte", "bis nächstes mal, du opfer", "endlich kann ich chillen, tschau" };
 
             #endregion
 
@@ -234,20 +204,6 @@ namespace Eigene_KI
                         say(wiegehts[r.Next(8)]);
                         break;
 
-                    #endregion
-
-                    #region 3. Was geht ab
-                    case "was geht ab":
-                        say(wasgeht[r.Next(3)]);
-                        break;
-                    case "was los digga":
-                        say(wasgeht[r.Next(3)]);
-                        break;
-                    case "jo was geht":
-                        say(wasgeht[r.Next(3)]);
-                        break;
-
-                    #endregion
 
                     #region 4. danke
 
@@ -263,34 +219,18 @@ namespace Eigene_KI
 
                     #endregion
 
-                    #region 5 - 10. Kennst du Leute
-
+                    #region 5 - 6. Kennst du
                     case "kennst du den google assistent":
                         say(google[r.Next(4)]);
                         break;
                     case "kennst du siri":
                         say(siri[r.Next(4)]);
                         break;
-                    case "kennst du tatjana stahl":
-                        say(tatjana[r.Next(3)]);
-                        break;
-                    case "kennst du maximilian meier":
-                        say(max[r.Next(4)]);
-                        break;
-                    case "kennst du luana felzmann":
-                        say(luana[r.Next(3)]);
-                        break;
-                    case "kennst du jessica bastian":
-                        say(jessica[r.Next(3)]);
-                        break;
-                    case "kennst du janik freiheit":
-                        say("Janik, dieser wichser");
-                        break;
-
+                    
 
                     #endregion
 
-                    #region 11. gut 
+                    #region 7 gut 
 
                     case "danke mir gehts auch gut":
                         say(gut[r.Next(3)]);
@@ -303,7 +243,7 @@ namespace Eigene_KI
                         break;
                     #endregion
 
-                    #region 12. wer bist
+                    #region 8 wer bist
 
                     case "wer bist du":
                         say(werbist[r.Next(5)]);
@@ -322,7 +262,7 @@ namespace Eigene_KI
                         break;
                     #endregion
 
-                    #region 13. erschaffen
+                    #region 9 erschaffen
 
                     case "wer hat dich programmiert":
                         say(erschaffen[r.Next(4)]);
@@ -338,7 +278,7 @@ namespace Eigene_KI
                         break;
                     #endregion
 
-                    #region 14. was kannst
+                    #region 10 was kannst
 
                     case "was kannst du alles":
                         say(waskannst[r.Next(8)]);
@@ -351,7 +291,7 @@ namespace Eigene_KI
                         break;
                     #endregion
 
-                    #region 15. Programme
+                    #region 11 Programme
 
                     case "was kannst du öffnen":
                         say(programme[r.Next(1)]);
@@ -367,7 +307,7 @@ namespace Eigene_KI
                         break;
                     #endregion
 
-                    #region 16. Uhrzeit
+                    #region 12 Uhrzeit
 
                     case "was sagt die Zeit":
                         say(uhrzeit[r.Next(2)]);
@@ -380,7 +320,7 @@ namespace Eigene_KI
                         break;
                     #endregion
 
-                    #region 17. Datum 
+                    #region 13.Datum
 
                     case "was für ein Tag haben wir heute":
                         say(datum);
@@ -390,28 +330,7 @@ namespace Eigene_KI
                         break;
                     #endregion
 
-                    #region 18. Maxcom
-
-                    case "hallo, i bims":
-                        say(maxcom[r.Next(3)]);
-                        break;
-                    case "bims du eins nise künstliche Intelligents":
-                        say(maxcom[r.Next(3)]);
-                        break;
-                    case "schiesch":
-                        say(maxcom[r.Next(3)]);
-                        break;
-
-                    #endregion
-
-                    #region 19. Youtubekake
-
-                    case "hau mal jutubkake raus":
-                        say(maseldavis[r.Next(5)]);
-                        break;
-                    #endregion
-
-                    #region 20. Wikipedia
+                    #region 14. Wikipedia
 
                     case "was ist youtube":
                         say(wikipedia[r.Next(2)]);
@@ -524,29 +443,6 @@ namespace Eigene_KI
 
                         break;
 
-
-                    #endregion
-
-                    #region 23. Du bist
-
-                    case "du bist schlau":
-                        say(dubistschlau[r.Next(3)]);
-                        break;
-                    case "du bist dumm":
-                        say(dubistdumm[r.Next(3)]);
-                        break;
-                    case "du bist cool":
-                        say(dubistschlau[r.Next(2)]);
-                        break;
-                    case "du bist scheiße":
-                        say(dubistscheiße[r.Next(3)]);
-                        break;
-                    case "du bu bist witzig":
-                        say(dubistwitzig[r.Next(3)]);
-                        break;
-                    case "du bist lustig":
-                        say(dubistwitzig[r.Next(3)]);
-                        break;
 
                     #endregion
 
@@ -669,4 +565,4 @@ namespace Eigene_KI
 }
 
 
-// bin ich - Fragen einbauen 
+// Weitere Enwicklung folgt...
