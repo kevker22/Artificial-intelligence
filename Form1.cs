@@ -45,7 +45,7 @@ namespace Eigene_KI
             #region Die String Arreys für die Fragen an Lis
             String[] begrüßung = new String[] { "hallo", "na was geht", "tach auch", "hallo lis" ,"lis" ,"okey lis" };
             String[] wiegehts = new String[] { "wie geht es dir", "wie gehts", "was läuft", "wie gehts dir" };
-            String[] wasgeht = new string[] { "was geht ab", "was los digga", "jo was geht" };
+          
             String[] danke = new String[] { "danke", "dankeschön", "vielen dank" };
             String[] kennst = new String[] { "kennst du den google assistent", "kennst du siri", "kennst du tatjana stahl", "kennst du jessica bastian", "kennst du maximilian meier", "kennst du luana felzmann" , "kennst du janik freiheit" };
             String[] gut = new string[] { "danke mir gehts auch gut", "mir gehts auch gut", "super danke" };
