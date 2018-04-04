@@ -168,16 +168,16 @@ namespace Eigene_KI
                     #region 1. Begrüßung
 
                     case "hallo":
-                        say(begrüßung[r.Next(8)]);
+                        say(begrüßung[r.Next(7)]);
                         break;
                     case "na was geht":
-                        say(begrüßung[r.Next(8)]);
+                        say(begrüßung[r.Next(7)]);
                         break;
                     case "tach auch":
-                        say(begrüßung[r.Next(8)]);
+                        say(begrüßung[r.Next(7)]);
                         break;
                     case "hallo lis":
-                        say(begrüßung[r.Next(8)]);
+                        say(begrüßung[r.Next(7)]);
                         break;
                     case "lis":
                         say(begrüßung[r.Next(2)]);
