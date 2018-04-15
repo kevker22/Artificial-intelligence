@@ -18,6 +18,7 @@ using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using OpenWeatherMap;
 
 namespace Eigene_KI
 {
@@ -60,6 +61,7 @@ namespace Eigene_KI
             String[] ordner = new string[] {"wieviele ordner und dateien", "welche ordner und dateien"};
             String[] ruhemodus = new String[] { "spreche" , "sei still" };
             String[] verabschieden = new String[3] { "tschüss", "danke das wars schon", "bis nächstes mal lis" };
+            String[] wetter = new string[] { "wie ist das wetter", "was kannst du mir zum wetter sagen" };
 
             #endregion
 
@@ -81,6 +83,7 @@ namespace Eigene_KI
             commands.Add(ordner);
             commands.Add(ruhemodus);
             commands.Add(verabschieden);
+            commands.Add(wetter);
 
             #endregion
 
@@ -386,7 +389,7 @@ namespace Eigene_KI
 
                     #endregion
 
-                    #region 21. Witze
+                    #region 15. Witze
 
                     case "erzäh mir einen witz":
                         say(witze[r.Next(12)]);
@@ -414,7 +417,7 @@ namespace Eigene_KI
 
                     #endregion
 
-                    #region 22. Ordner auslesen
+                    #region 16. Ordner auslesen
 
                     case "wieviele ordner und dateien": // Teil 1 für die Auslesung von Ordnern und Dateien
 
@@ -442,6 +445,16 @@ namespace Eigene_KI
                         say("In deinem verzeichnis existieren folgende ordner," + ordneransicht_txt.Text);
 
                         break;
+                        
+                         #region 17. Wetter
+
+                    case "wie ist das wetter":
+
+                        GetWeather();
+                       
+                    break;
+
+                    #endregion
 
 
                     #endregion
@@ -558,6 +571,19 @@ namespace Eigene_KI
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             this.Show();
+        }
+        
+        async void GetWeather()
+        {
+            var client = new OpenWeatherMapClient(""); // Hier muss man den eigenen API Key von GetWeatherMap.com eingeben, den man nach dem LogIn bekommt
+            String ort = "Rastatt";
+            var currentWeather = await client.CurrentWeather.GetByName(ort); // soll drauf warten auf die Antwort vom Client
+         
+
+            int Temperatur = Convert.ToInt16(currentWeather.Temperature.Value - 273.15); // Umrechung von Kelvin in Grad, da dies von CurrentWeather nicht in Celsius ausgegeben wird 
+
+           
+            say("die aktuelle Temperatur beträgt in: " + ort + Temperatur + "Grad Celsius");
         }
 
         #endregion
